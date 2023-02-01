@@ -1,0 +1,58 @@
+touch a // 创建一个a文件
+echo 1234 >> a // 把1234这个内容放入a文件
+cat a // 打开a文件 读取出a文件中的内容
+mkdir test // 创建test文件夹
+rm 文件名 // 删除文件
+pwd // 打印当前工作路径
+*********************************************
+gitk // 用git命令快速打开git GUI
+*********************************************
+ls // 查看当前路径下面的所有文件名
+ls 文件夹名 // 查看对应文件夹中的内容
+ls -l // 拉出最近git提交记录以及对应修改的文件名
+ls -l -a // 拉出最近git提交记录以及对应修改的文件名，隐藏的文件也会显示
+*********************************************
+cd ~ // 将工作路径快速切换到root
+cd - // 将工作路径切换到上一状态
+cd ../ // 切回到上一个工作路径
+cd 文件夹名 // 进入某个目录
+cd / // 进入根目录
+*********************************************
+vim 文件名 // 新建一个文件
+i 插入内容
+按下esc :wq 保存并退出
+按下esc :q 直接退出
+vim 模式下 文件中#号开头的为注释
+.project 忽略.project文件
+*.obj 或者 *.exe 忽略一类文件 例如以.obj .exe 结尾的文件
+
+git check-ignore -v .project 查看ignore中.project的位置
+*********************************************
+git init // 初始化 在工作路径上创建主分支
+git clone 地址 // 克隆远程仓库
+git clone -b 分支名 地址 // 克隆远程仓库分支的代码到本地
+git status // 查看状态
+git add 文件名 // 将某个文件存入暂存区
+git checkout -- file // 撤销工作区的修改 例如git checkout -- readMe.txt 将本次readMe.txt在工作区的修改撤销掉
+git add b c //把b和c存入暂存区
+git add . // 将所有文件提交到暂存区
+git add -p 文件名 // 一个文件分多次提交
+git stash -u -k // 提交部分文件内容 到仓库 例如本地有3个文件 a b c 只想提交a b到远程仓库 git add a b 然后 git stash -u -k 再然后git commit -m "备注信息" 然后再push push之后 git stash pop 把之前放入堆栈的c拿出来 继续下一波操作
+git commit -m "提交的备注信息"  // 提交到仓库
+若已经有若干文件放入仓库，再次提交可以不用git add和git commit -m "备注信息" 这2步， 直接用
+git commit -am "备注信息" // 将内容放至仓库 也可用git commit -a -m "备注信息"
+* git commit中的备注信息尽量完善 养成良好提交习惯 例如 git commit -m "变更(范围)：变更的内容"
+***********************************************
+git config --list // 获取config信息
+git config --global core.safecrlf false // 去掉git add 命令后 出现的一堆CR LF提示信息
+其中CR是回车的意思 LF是换行
+git config --global user.name"your name" // 设置username
+git config --global user.email"your_email@youremail.com" // 设置邮箱
+git config --global credential.helper wincred // 存储凭证 (可用于输入一次用户密码后，不再输入 有时我们已经用SSH key 绑定关联好了 但是每次git提交的时候 还是需要你输入用户名密码 在这个时候 敲入这个命令 将凭证存储起来 用户名密码就不需要再次输入了)
+git config --global alias.ci commit // 将commit命令设置别名ci git commit命令将由git ci来代替
+
+
+
+
+
+
